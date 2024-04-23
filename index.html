@@ -46,7 +46,6 @@
                         </button>
                     </div>
                 </div>
-
             </div>
             <div class="flex gap-2">
                 <img src="./assets/hamb-2.png"
@@ -98,9 +97,7 @@
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 30</p>
                         <button class="bg-gray-900 px-5 rounded 
-                        add-to-cart-btn" 
-                        data-name="Hamburger da casa"
-                        data-price="30">
+                        add-to-cart-btn" data-name="Hamburger da casa" data-price="30">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -108,7 +105,7 @@
             </div>
         </main>
 
-        <!-- Bebidas Section -->
+        <!-- Drinks Section -->
         <div class="mx-auto max-w-7xl px-2 my-2">
             <h2 class="font-bold text-3xl">
                 Bebidas
@@ -139,7 +136,8 @@
                     <p class="font-bold">Guarana lata</p>
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 6</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Guarana lata" data-price="6">
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Guarana lata"
+                            data-price="6">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -148,7 +146,8 @@
         </div>
 
         <!-- Modal Cart -->
-        <div id="cart-modal" class="bg-black/60 w-full h-full fixed top-0 left- z-[99] items-center justify-center hidden">
+        <div id="cart-modal"
+            class="bg-black/60 w-full h-full fixed top-0 left- z-[99] items-center justify-center hidden">
             <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
                 <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
 
@@ -158,12 +157,14 @@
 
                 <p class="font-bold mt-4">Endereço de entrega:</p>
 
-                <input type="text" placeholder="Digite seu endereço completo..." id="adress" class="w-full border-2 p-1 rounded my-1">
+                <input type="text" placeholder="Digite seu endereço completo..." id="adress"
+                    class="w-full border-2 p-1 rounded my-1">
                 <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
-            
+
                 <div class="flex items-center justify-between mt-5 w-full">
                     <button id="close-modal-btn">Fechar</button>
-                    <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedidos</button>
+                    <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar
+                        pedidos</button>
                 </div>
             </div>
         </div>
