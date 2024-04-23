@@ -27,6 +27,7 @@
     <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">Conheça nosso menu</h2>
 
     <div id="menu">
+        <!-- Grid Foods -->
         <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
             <div class="flex gap-2">
                 <img src="./assets/hamb-1.png"
@@ -96,21 +97,24 @@
 
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="font-bold text-lg">R$ 30</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburger da casa"
-                            data-price="30">
+                        <button class="bg-gray-900 px-5 rounded 
+                        add-to-cart-btn" 
+                        data-name="Hamburger da casa"
+                        data-price="30">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
                 </div>
-
             </div>
         </main>
 
+        <!-- Bebidas Section -->
         <div class="mx-auto max-w-7xl px-2 my-2">
             <h2 class="font-bold text-3xl">
                 Bebidas
             </h2>
         </div>
+
         <!-- Grid Bebidas -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
             <div class="flex gap-2 w-full">
@@ -144,7 +148,7 @@
         </div>
 
         <!-- Modal Cart -->
-        <div class="bg-black/60 w-full h-full fixed top-0 left- z-[99] items-center justify-center flex">
+        <div id="cart-modal" class="bg-black/60 w-full h-full fixed top-0 left- z-[99] items-center justify-center hidden">
             <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
                 <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
 
@@ -163,16 +167,18 @@
                 </div>
             </div>
         </div>
-        <!-- Button Cart -->
+
+        <!-- Button CartCheckout -->
         <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center">
             <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
                 <i class="fa fa-cart-plus text-lg text-white"></i>
                 Ver seu carrinho
-                (<span id="cart-count">2</span>)
+                (<span id="cart-count">0</span>)
             </button>
         </footer>
     </div>
 
+    <script src="./index.js"></script>
 </body>
 
 </html>
