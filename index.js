@@ -9,7 +9,7 @@ const cartCounter = document.getElementById("cart-count");
 const inputAdress = document.getElementById("adress");
 const addressWarn = document.getElementById("address-warn");
 
-const checkoutItems = [];
+const cartItems = [];
 
 // Close and open ModalCheckout
 cartBtn.addEventListener("click", () => {
@@ -35,13 +35,13 @@ menu.addEventListener("click", (event) => {
 })
 
 function addToCart(name, price) {
-    const existItem = checkoutItems.find(item => item.name === name)
+    const existItem = cartItems.find(item => item.name === name)
 
     if (existItem) {
         existItem.quantity += 1;
         return
     } else {
-        checkoutItems.push({
+        cartItems.push({
             name,
             price,
             quantity: 1
@@ -55,7 +55,7 @@ function updateModalCart() {
     cartItemsContainer.innerHTML = ""
     let total = 0;
 
-    checkoutItems.forEach(item => {
+    cartItems.forEach(item => {
         const itemELement = document.createElement("div");
         itemELement.classList.add("flex", "flex-col", "justify-between", "mb-4",)
 
@@ -67,7 +67,7 @@ function updateModalCart() {
                     <p class="font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
                 </div>
 
-                <button>
+                <button class="remove-from-cart-btn" data-name="${item.name}">
                     Remover
                 </button>
             </div>
@@ -82,5 +82,36 @@ function updateModalCart() {
         currency: "BRL"
     });
 
-    cartCounter.innerHTML = checkoutItems.length;
+    cartCounter.innerHTML = cartItems.length;
+}
+
+// Remove Functionality
+cartItemsContainer.addEventListener("click", (event) => {
+    if (event.target.classList.contains("remove-from-cart-btn")) {
+        const itemName = event.target.getAttribute("data-name");
+
+        removeItemCart(itemName);
+    }
+})
+
+function removeItemCart(value) {
+    const index = findByIndex(value);
+
+    if(index !== -1){
+        const selectedItem = cartItems[index]
+
+        if(selectedItem.quantity > 1){
+            selectedItem.quantity -= 1
+            updateModalCart()
+            console.log(cartItems);
+        }else{
+            cartItems.splice(index, 1);
+            updateModalCart()
+            console.log(cartItems);
+        }
+    }
+}
+
+function findByIndex(value) {
+    return cartItems.findIndex(item => item.name === value);;
 }
